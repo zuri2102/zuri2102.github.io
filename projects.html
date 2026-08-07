@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zuri Ye - Projects</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <nav class="global-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="retro-press">home</a></li>
+      <li><a href="projects.html" class="retro-press">projects</a></li>
+      <li><a href="about.html" class="retro-press">about</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="cartridge-grid" id="projects-grid">
+      <!-- Cartridges will be injected here by JS -->
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/interactions.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('data/projects.json')
+        .then(res => res.json())
+        .then(projects => {
+          const grid = document.getElementById('projects-grid');
+          projects.forEach(project => {
+            const cartridge = document.createElement('a');
+            cartridge.href = `project.html?id=${project.id}`;
+            cartridge.className = 'cartridge retro-press';
+            
+            let tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+            cartridge.innerHTML = `
+              <h2 class="cartridge-title">${project.title}</h2>
+              <p class="cartridge-summary">${project.summary}</p>
+              <div class="cartridge-tags">${tagsHtml}</div>
+            `;
+            
+            grid.appendChild(cartridge);
+          });
+        })
+        .catch(err => console.error("Error loading projects:", err));
+    });
+  </script>
+</body>
+</html>

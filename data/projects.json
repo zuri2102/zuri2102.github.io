@@ -1,0 +1,30 @@
+[
+  {
+    "id": "game1",
+    "title": "Retro Runner",
+    "summary": "An infinite runner in 8-bit style.",
+    "tags": ["JS", "Canvas", "Aseprite"],
+    "content": "<p>Retro runner was a fun weekend project to explore HTML5 Canvas game development.</p><p>It features a classic 8-bit aesthetic and chiptune music.</p><img src='https://via.placeholder.com/600x300' alt='Gameplay screenshot'>"
+  },
+  {
+    "id": "game2",
+    "title": "Space Invaders Clone",
+    "summary": "A modern take on a classic.",
+    "tags": ["HTML", "CSS", "JS"],
+    "content": "<p>A simple Space Invaders clone built to practice object-oriented JavaScript.</p>"
+  },
+  {
+    "id": "game3",
+    "title": "Pixel RPG",
+    "summary": "A top-down role playing game prototype.",
+    "tags": ["React", "CSS Grid"],
+    "content": "<p>Exploring tile-based movement and inventory management.</p>"
+  },
+  {
+    "id": "game4",
+    "title": "Pokedex App",
+    "summary": "A fully functional Pokedex using PokeAPI.",
+    "tags": ["API", "CSS Variables"],
+    "content": "<p>Fetches data from the PokeAPI and displays it in a clean, retro UI.</p>"
+  }
+]

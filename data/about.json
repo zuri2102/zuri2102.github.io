@@ -1,0 +1,12 @@
+[
+  {
+    "type": "text",
+    "title": "Textbox, can keep going as long as wanted",
+    "content": "Its own textbox, like code with line numbers. Skills go here, format like a yaml"
+  },
+  {
+    "type": "code",
+    "title": "Text",
+    "content": "Yaml\nAnd continue repeating\npattern as long as wanted"
+  }
+]

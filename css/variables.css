@@ -1,0 +1,40 @@
+/* css/variables.css */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
+
+:root {
+  /* Core Colors */
+  --color-green: #c3ded6;   
+  --color-orange: #ff4c00;  
+  --color-gray: #494a50;    
+  --color-cream: #f9f5ed;
+  
+  --color-purple: #6b0080; /* seen in the Pokemon example */
+
+  /* Aliases for semantic mapping - Edit these if you want to reuse different core colors for specific elements */
+  --color-nav-bg: var(--color-green);
+  --color-nav-text: var(--color-gray);
+  --color-button-bg: var(--color-orange);
+  --color-button-text: var(--color-cream);
+  --color-body-bg: var(--color-cream);
+  --color-text-main: var(--color-gray);
+  --color-text-accent: var(--color-orange);
+  
+  /* Fonts */
+  --font-display: 'VT323', monospace;   /* Retro font for titles and the 404 */
+  --font-body: 'Inter', sans-serif;       /* Clean font for paragraphs */
+  --font-mono: 'Fira Code', monospace;    /* Monospace for code blocks */
+  
+  --font-size-base: 16px;
+
+  /* Interaction Timings for Retro Press */
+  --press-scale-hover: scale(1.06);
+  --press-scale-active: scale(0.96);
+  --press-duration: 0.1s;
+  
+  /* Layout Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+}

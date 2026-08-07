@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zuri Ye - About</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <nav class="global-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="retro-press">home</a></li>
+      <li><a href="projects.html" class="retro-press">projects</a></li>
+      <li><a href="about.html" class="retro-press">about</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="about-block-container" id="about-container">
+      <!-- Blocks will be injected here by JS -->
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/interactions.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('data/about.json')
+        .then(res => res.json())
+        .then(blocks => {
+          const container = document.getElementById('about-container');
+          
+          blocks.forEach(block => {
+            if (block.type === 'text') {
+              const div = document.createElement('div');
+              div.className = 'about-text-block';
+              
+              // You can add sprites using <img class="sprite-inline sprite-bw" src="..."> inside your JSON content
+              div.innerHTML = `
+                ${block.title ? `<h3>${block.title}</h3>` : ''}
+                <div class="text-content">${block.content}</div>
+              `;
+              container.appendChild(div);
+            } else if (block.type === 'code') {
+              const div = document.createElement('div');
+              div.className = 'about-code-block';
+              
+              div.innerHTML = `
+                <div class="code-content">${block.content}</div>
+              `;
+              container.appendChild(div);
+            }
+          });
+
+          // After all blocks are added, render line numbers for code blocks
+          renderLineNumbers();
+        })
+        .catch(err => console.error("Error loading about blocks:", err));
+    });
+  </script>
+</body>
+</html>

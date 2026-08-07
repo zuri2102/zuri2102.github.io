@@ -1,0 +1,71 @@
+/* css/pages.css */
+
+/* Home Page */
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  position: relative;
+  padding: var(--spacing-xl) var(--spacing-md);
+  overflow: hidden; /* keep sprites from expanding layout */
+}
+
+.splash-container {
+  position: relative;
+  width: 60vw;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.home-name {
+  color: var(--color-orange);
+  font-family: var(--font-display);
+  font-size: 3rem;
+  margin-top: var(--name-offset-top, 2rem);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Individual Project Page */
+.project-detail-layout {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  width: 100%;
+}
+
+.project-title {
+  color: var(--color-orange);
+  font-family: var(--font-display);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.project-content-box {
+  color: #00ff00; /* green text based on project_page_example */
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 0;
+  /* no background in example, just text on cream */
+}
+
+/* Rich text formatting within project content */
+.project-content-box p {
+  margin-bottom: var(--spacing-md);
+}
+
+.project-content-box img {
+  border-radius: 4px;
+  margin: var(--spacing-md) 0;
+}
