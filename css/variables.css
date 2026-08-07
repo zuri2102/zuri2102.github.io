@@ -27,6 +27,17 @@
   
   --font-size-base: 16px;
 
+  /* Home Page Specific Settings */
+  --home-name-font-size: 3rem;
+  --home-name-margin-top: 2rem;
+  --home-name-margin-bottom: 2rem;
+  --resume-btn-font-size: 1.5rem;
+  --resume-btn-padding: 0.5rem 2rem;
+
+  /* About Page Specific Settings */
+  --about-text-color: var(--color-green);
+  --about-heading-color: var(--color-orange);
+
   /* Interaction Timings for Retro Press */
   --press-scale-hover: scale(1.06);
   --press-scale-active: scale(0.96);

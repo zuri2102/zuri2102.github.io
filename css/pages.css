@@ -30,9 +30,9 @@
 .home-name {
   color: var(--color-orange);
   font-family: var(--font-display);
-  font-size: 3rem;
-  margin-top: var(--name-offset-top, 2rem);
-  margin-bottom: var(--spacing-lg);
+  font-size: var(--home-name-font-size);
+  margin-top: var(--home-name-margin-top);
+  margin-bottom: var(--home-name-margin-bottom);
   text-align: center;
 }
 
@@ -53,11 +53,10 @@
 }
 
 .project-content-box {
-  color: #00ff00; /* green text based on project_page_example */
+  color: var(--color-gray);
   font-family: var(--font-body);
   line-height: 1.6;
   padding: 0;
-  /* no background in example, just text on cream */
 }
 
 /* Rich text formatting within project content */

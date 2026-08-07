@@ -31,6 +31,7 @@
 
   <script src="js/config.js"></script>
   <script src="js/interactions.js"></script>
+  <script src="data/projects.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
@@ -41,22 +42,14 @@
         return;
       }
 
-      fetch('data/projects.json')
-        .then(res => res.json())
-        .then(projects => {
-          const project = projects.find(p => p.id === projectId);
-          if (project) {
-            document.title = `Zuri Ye - ${project.title}`;
-            document.getElementById('project-title').textContent = project.title;
-            document.getElementById('project-content').innerHTML = project.content;
-          } else {
-            document.getElementById('project-title').textContent = "Project Not Found";
-          }
-        })
-        .catch(err => {
-          console.error("Error loading project:", err);
-          document.getElementById('project-title').textContent = "Error loading project data";
-        });
+      const project = siteProjects.find(p => p.id === projectId);
+      if (project) {
+        document.title = `Zuri Ye - ${project.title}`;
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('project-content').innerHTML = project.content;
+      } else {
+        document.getElementById('project-title').textContent = "Project Not Found";
+      }
     });
   </script>
 </body>

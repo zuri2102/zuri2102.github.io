@@ -1,4 +1,4 @@
-﻿// js/config.js
+// js/config.js
 // Centralized configuration for the personal website.
 
 const siteConfig = {
@@ -24,5 +24,38 @@ const siteConfig = {
       right: '6%',
       transform: 'none'
     }
+  },
+  
+  // Cartridge Text Positions (relative to the cartridge image on Projects page)
+  // Edit these values to move the title, summary, subheading, and tags around the image.
+  cartridgeLayout: {
+    title: {
+      top: '10%',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '80%'
+    },
+    subheading: {
+      top: '25%',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '80%'
+    },
+    summary: {
+      top: '40%',
+      left: '25%',
+      width: '50%'
+    },
+    tags: {
+      bottom: '10%',
+      left: '10%',
+      width: '80%'
+    }
+  },
+  
+  // General Library of Pokémon Sprites
+  // You can use these URLs in your HTML content.
+  pokemonLibrary: {
+    bellsprout: "https://img.pokemondb.net/sprites/black-white/anim/normal/bellsprout.gif"
   }
 };

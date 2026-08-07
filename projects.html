@@ -27,29 +27,31 @@
 
   <script src="js/config.js"></script>
   <script src="js/interactions.js"></script>
+  <script src="data/projects.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      fetch('data/projects.json')
-        .then(res => res.json())
-        .then(projects => {
-          const grid = document.getElementById('projects-grid');
-          projects.forEach(project => {
-            const cartridge = document.createElement('a');
-            cartridge.href = `project.html?id=${project.id}`;
-            cartridge.className = 'cartridge retro-press';
-            
-            let tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+      const grid = document.getElementById('projects-grid');
+      const cLayout = siteConfig.cartridgeLayout || { title: {}, summary: {}, tags: {} };
+      
+      siteProjects.forEach(project => {
+        const cartridge = document.createElement('a');
+        cartridge.href = `project.html?id=${project.id}`;
+        cartridge.className = 'cartridge retro-press';
+        
+        let tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
-            cartridge.innerHTML = `
-              <h2 class="cartridge-title">${project.title}</h2>
-              <p class="cartridge-summary">${project.summary}</p>
-              <div class="cartridge-tags">${tagsHtml}</div>
-            `;
-            
-            grid.appendChild(cartridge);
-          });
-        })
-        .catch(err => console.error("Error loading projects:", err));
+        cartridge.innerHTML = `
+          <img src="assets/sprites/cartridge.png" class="cartridge-bg" alt="Cartridge">
+          <div class="cartridge-content">
+            <h2 class="cartridge-title" style="top: ${cLayout.title.top}; left: ${cLayout.title.left}; transform: ${cLayout.title.transform || 'none'}; width: ${cLayout.title.width};">${project.title}</h2>
+            ${project.subheading ? `<div class="cartridge-subheading" style="top: ${cLayout.subheading.top}; left: ${cLayout.subheading.left}; transform: ${cLayout.subheading.transform || 'none'}; width: ${cLayout.subheading.width};">${project.subheading}</div>` : ''}
+            <p class="cartridge-summary" style="top: ${cLayout.summary.top}; left: ${cLayout.summary.left}; width: ${cLayout.summary.width};">${project.summary}</p>
+            <div class="cartridge-tags" style="bottom: ${cLayout.tags.bottom}; left: ${cLayout.tags.left}; width: ${cLayout.tags.width};">${tagsHtml}</div>
+          </div>
+        `;
+        
+        grid.appendChild(cartridge);
+      });
     });
   </script>
 </body>
