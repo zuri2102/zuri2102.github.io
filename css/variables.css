@@ -31,8 +31,8 @@
   /* Home Page Specific Settings */
   --home-content-offset-y: -7rem;
   --home-name-font-size: 5rem;
-  --home-name-margin-top: -2rem;
-  --home-name-margin-bottom: 1rem;
+  --home-name-margin-top: -1rem;
+  --home-name-margin-bottom: 0rem;
   --resume-btn-font-size: 1.5rem;
   --resume-btn-padding: 1rem 1rem;
 
