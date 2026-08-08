@@ -52,6 +52,26 @@
         
         grid.appendChild(cartridge);
       });
+
+      // Keep every overlay element at the same scale as its cartridge image.
+      const desktopCartridgeWidth = 352;
+      const resizeCartridgeContent = cartridge => {
+        const content = cartridge.querySelector('.cartridge-content');
+        const scale = cartridge.clientWidth / desktopCartridgeWidth;
+
+        content.style.width = `${100 / scale}%`;
+        content.style.height = `${100 / scale}%`;
+        content.style.transform = `scale(${scale})`;
+      };
+
+      const cartridgeObserver = new ResizeObserver(entries => {
+        entries.forEach(entry => resizeCartridgeContent(entry.target));
+      });
+
+      grid.querySelectorAll('.cartridge').forEach(cartridge => {
+        resizeCartridgeContent(cartridge);
+        cartridgeObserver.observe(cartridge);
+      });
     });
   </script>
 </body>
