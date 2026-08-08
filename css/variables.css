@@ -1,4 +1,4 @@
-/* css/variables.css */
+﻿/* css/variables.css */
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
 
@@ -29,13 +29,13 @@
 
   /* Home Page Specific Settings */
   --home-name-font-size: 3rem;
-  --home-name-margin-top: 2rem;
-  --home-name-margin-bottom: 2rem;
+  --home-name-margin-top: 0rem;
+  --home-name-margin-bottom: 0rem;
   --resume-btn-font-size: 1.5rem;
   --resume-btn-padding: 0.5rem 2rem;
 
   /* About Page Specific Settings */
-  --about-text-color: var(--color-green);
+  --about-text-color: var(--color-gray);
   --about-heading-color: var(--color-orange);
 
   /* Interaction Timings for Retro Press */

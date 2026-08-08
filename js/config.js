@@ -19,8 +19,8 @@ const siteConfig = {
       transform: 'none'
     },
     skitty: {
-      width: '20%',
-      bottom: '4%',
+      width: '23%',
+      bottom: '5%',
       right: '6%',
       transform: 'none'
     }

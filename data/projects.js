@@ -1,66 +1,142 @@
 const siteProjects = [
   {
-    "id": "bellsprout-lamp",
-    "title": "Bellsprout Lamp",
-    "subheading": "Example Project",
-    "summary": "Demonstrating project features.",
-    "tags": ["Example", "Demo"],
-    "content": "<p>This is an example page demonstrating how to use text, images, and the Pokémon library.</p><img src='assets/projects/bellsprout-lamp/404splash.png' alt='404 Splash Demo'><p>And here is Bellsprout:</p><a href='https://pokemondb.net/pokedex/bellsprout'><img src='https://img.pokemondb.net/sprites/black-white/anim/normal/bellsprout.gif' alt='Bellsprout'></a>"
-  },
-  {
     "id": "rislab",
-    "title": "RISLAB Research",
+    "title": "Research",
     "subheading": "Undergraduate Researcher",
-    "summary": "Real-time SLAM optimization for UAVs.",
-    "tags": ["SLAM", "PyTorch", "CUDA"],
-    "content": "<ul><li>Researching real-time SLAM optimization for high-speed UAVs to mitigate motion blur and large inter-frame displacement.</li><li>Analyzing and implementing Gaussian Splatting-based monocular SLAM and methodologies found in VINGS-Mono.</li><li>Optimizing pipeline execution speed and investigating ML methodology across wide spatial gaps using factor graphs, GTSAM, GRUs, CNNs.</li></ul>"
-  },
+    "summary": "Exploring Gaussian Splatting & SLAM optimization in UAVs <a href=\"https://pokemondb.net/pokedex/yanmega\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/yanmega.gif\" alt=\"Yanmega\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["SLAM", "PyTorch", "CUDA", "CURRENT"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<a href='https://github.com/zuri2102/vings_zy.git' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- GitHub</a>",
+      "<img src='ref/404splash.png' alt='404 Splash Demo'>",
+      "<br>",
+      "<i style=\"color: #ff4c00;\">November 2025 - Present</i>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")  },
   {
     "id": "tartan-auv",
-    "title": "Tartan AUV",
+    "title": "TartanAUV",
     "subheading": "Electrical Subteam Member",
-    "summary": "Electrical Subteam for autonomous submarine.",
-    "tags": ["Altium", "PCBs", "Soldering"],
-    "content": "<ul><li>Designing custom PCBs in Altium Designer (e.g., power distribution, servo breakout).</li><li>Assembling PCBs and performing hands-on SMD, through-hole soldering, reflow soldering, and testing.</li><li>Competed at RoboSub competition with team's submarine, capable of autonomously aiming and shooting torpedoes.</li></ul>"
-  },
-  {
-    "id": "honey-haven",
-    "title": "Honey Haven",
-    "subheading": "Co-Lead, Programming & Art Lead",
-    "summary": "1st Place visual novel game development.",
-    "tags": ["GDScript", "Game Dev"],
-    "content": "<ul><li>Led full-lifecycle development and Itch.io release of a visual novel, winning 1st Place at a game expo with 200+ plays.</li><li>Architected modular GDScript systems to manage core game state, UI themes, and minigame integration.</li><li>Engineered a Twine-to-JSON pipeline dynamically parsing writer scripts into UI elements and scene cues.</li></ul>"
-  },
-  {
-    "id": "uss-hornet",
-    "title": "USS Hornet",
-    "subheading": "Aircraft Restoration Group Volunteer",
-    "summary": "Restored Vietnam-era aircraft.",
-    "tags": ["Restoration", "Museum"],
-    "content": "<ul><li>Restored Vietnam aircraft (T-28B Trojan, S-3 Viking, F-4 Phantom II) with corrosion treatment and repainting.</li><li>Maintained other exhibits, repairing tug engines and restoring drop tanks.</li></ul>"
-  },
-  {
-    "id": "beaver-works",
-    "title": "MIT Beaver Works",
-    "subheading": "UAV Student & Software Comm. Lead",
-    "summary": "Engineered autonomous ROS2 quadcopter.",
-    "tags": ["ROS2", "Python", "OpenCV"],
-    "content": "<ul><li>Engineered IMMANUEL, a ROS2-based autonomous quadcopter for task-driven competition.</li><li>Led node communication for controls and CV tasks (open loop control, obstacle avoidance) in Python and OpenCV.</li></ul>"
-  },
+    "summary": "Making boards and other odd jobs <a href=\"https://pokemondb.net/pokedex/wailord\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/wailord.gif\" alt=\"Wailord\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["Altium", "PCBs", "CURRENT"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<img src='assets/projects/tartan-auv/updog.jpeg' alt='updog PCB'>",
+      "<br>",
+      "<i style=\"color: #ff4c00;\">September 2025 - Present</i>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>",
+      "<img src='assets/projects/tartan-auv/servopower.png' alt='TartanAUV PCB'>",
+    ].join("\n")  },
   {
     "id": "huawei-ipod",
-    "title": "Huawei iPod",
+    "title": "Candybar iPod",
     "subheading": "Personal Project",
-    "summary": "Custom PCB MP3-player in cellular shell.",
-    "tags": ["KiCAD", "ESP32", "C"],
-    "content": "<ul><li>Refurbishing a Huawei u2800a cellular shell into a custom PCB MP3-player with Wi-Fi playlist sync and microSD storage.</li><li>Designed around ESP32-WROOM-32E MCU, integrating SPI, I2C, and I2S in KiCAD.</li></ul>"
-  },
+    "summary": "Huawei u2800a <br>+ custom PCB <br> -> MP3-player! <br>Tune along... <br>(ba dum tss) <br><a href=\"https://pokemondb.net/pokedex/chatot\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/chatot.gif\" alt=\"Chatot\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["KiCAD", "ESP32", "IN PROGRESS"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<img src='assets/projects/mp3/power.png' alt='Candybar iPod'>",
+      "<br>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")  },
+  {
+    "id": "honey-haven",
+    "title": "HONEY HAVEN",
+    "subheading": "Co-Lead & Programming Lead",
+    "summary": "Psychological visual novel game...what's happening in Honey Haven? On Itch.io! <a href=\"https://pokemondb.net/pokedex/rattata\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/rattata.gif\" alt=\"Rattata\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["Godot", "Game Dev", "2026"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<a href='https://honeyhaven.itch.io/honey-haven' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- Play 'HONEY HAVEN'</a>",
+      "<br>",
+      "<a href='https://github.com/Honey-Haven/Honey_Haven' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- GitHub</a>",
+      "<img src='assets/projects/honey-haven/mirror(1).PNG' alt='mirror'>",
+      "<br>",
+      "<i style=\"color: #ff4c00;\">January 2026 - May 2026</i>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>",
+      "<img src='assets/projects/honey-haven/cover.png' alt='Honey Haven Cover'>",
+    ].join("\n")  },
   {
     "id": "sir-jester",
     "title": "Sir Jester",
+    "subheading": "Game Dev",
+    "summary": "14kB retro-style web game. Entertain the princess...or else? <a href=\"https://pokemondb.net/pokedex/mr-mime\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/mr-mime.gif\" alt=\"Mr. Mime\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["HTML/JS", "Hackathon", "2026"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<a href='https://avnithvijayram.com/projects/sirjester/game.html' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- Play 'Sir Jester'</a>",
+      "<br>",
+      "<a href='https://github.com/avnithv/jester.git' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- GitHub</a>",
+      "<img src='assets/projects/sir-jester/jester.png' alt='jester'>",
+      "<br>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")  },
+  {
+    "id": "bellsprout-lamp",
+    "title": "Bellsprout Lamp",
+    "subheading": "Project & Gift",
+    "summary": "A touch lamp, or Bellsprout? Birthday gift for friend!  <a href=\"https://pokemondb.net/pokedex/bellsprout\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/bellsprout.gif\" alt=\"Bellsprout\" style=\"filter: grayscale(100%);\"></a>",    
+    "tags": ["OnShape", "Arduino", "2026"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<img src='assets/projects/bellsprout-lamp/warm.jpeg' alt='Bellsprout Lamp'>",
+      "<br>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")  },
+  {
+    "id": "beaver-works",
+    "title": "IMMANUEL",
+    "subheading": "Software Communications Lead",
+    "summary": "Autonomous quadcopter IMMANUEL, created during <br>MIT LL Beaver Works <a href=\"https://pokemondb.net/pokedex/dunsparce\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/dunsparce.gif\" alt=\"Dunsparce\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["ROS2", "Python", "OpenCV", "2024"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<a href='https://github.com/zuri2102/flying_squirrels_architecture.git' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- GitHub</a>",
+      "<img src='assets/projects/bwsi/drone.jpeg' alt='IMMANUEL'>",
+      "<br>",
+      "<i style=\"color: #ff4c00;\">July 2024 - August 2024</i>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")  },  
+  {
+    "id": "rotary-piece",
+    "title": "Binary Rotary Game Piece",
+    "subheading": "Project/Product",
+    "summary": "A rotary encoder-inspired mechanism for gameplay and identification on tabletop game app. <a href=\"https://pokemondb.net/pokedex/klink\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/klink.gif\" alt=\"Klink\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["OnShape", "EARLY STAGES"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<img src='ref/404splash.png' alt='404 Splash Demo'>",
+      "<br>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")  },
+  {
+    "id": "clean-bot",
+    "title": "Desk Cleaner Bot",
     "subheading": "Personal Project",
-    "summary": "14kB retro-style web game.",
-    "tags": ["HTML/JS", "Hackathon"],
-    "content": "<ul><li>Developed gameplay software for a lightweight, 2D retro-style game in 24 hours for a team hackathon.</li><li>Achieved size of 14kB zipped using a single-file HTML, CSS, and JavaScript architecture, 8-bit music, and pixel art.</li></ul>"
-  }
-]
+    "summary": "A small octopus-inspired robot that organizes using a rotating tool-wheel and computer vision. <a href=\"https://pokemondb.net/pokedex/octillery\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/octillery.gif\" alt=\"Octillery\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["OnShape", "EARLY STAGES"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<img src='ref/404splash.png' alt='404 Splash Demo'>",
+      "<br>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")  },
+];
