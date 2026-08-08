@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+html {
+  background-color: var(--color-body-bg);
+  transition: background-color var(--theme-fade-duration) ease;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
@@ -14,12 +19,27 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition:
+    background-color var(--theme-fade-duration) ease,
+    color var(--theme-fade-duration) ease;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 main {
   flex-grow: 1; /* Ensures the page takes up the full height, filling remaining space with cream bg */
   display: flex;
   flex-direction: column;
+  transition: opacity var(--page-fade-duration) ease;
+  animation: page-fade-in var(--page-fade-duration) ease;
+}
+
+body.page-fade-out main,
+body.page-fade-out .project-overlay {
+  opacity: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {

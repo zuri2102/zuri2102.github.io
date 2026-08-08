@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    try {
+      const linkedTheme = new URLSearchParams(location.search).get('theme');
+      const savedTheme = linkedTheme || localStorage.getItem('theme');
+      if (linkedTheme) localStorage.setItem('theme', linkedTheme);
+      if (savedTheme === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch {}
+  </script>
   <title>Zuri Ye - Project</title>
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -20,7 +30,7 @@
   </nav>
 
   <main class="project-detail-layout">
-    <button onclick="window.history.back()" class="btn-back retro-press">&lt; back</button>
+    <a href="projects.html" class="btn-back retro-press">&lt; back</a>
     
     <h1 class="project-title" id="project-title">Loading...</h1>
     

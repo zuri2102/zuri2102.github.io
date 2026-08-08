@@ -54,10 +54,11 @@
 }
 
 .project-content-box {
-  color: var(--color-gray);
+  color: var(--color-page-text);
   font-family: var(--font-body);
   line-height: 1.6;
   padding: 0;
+  transition: color var(--theme-fade-duration) ease;
 }
 
 /* Rich text formatting within project content */
@@ -68,4 +69,34 @@
 .project-content-box img {
   border-radius: 4px;
   margin: var(--spacing-md) 0;
+}
+
+.project-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  overflow-y: auto;
+  background-color: var(--color-body-bg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    background-color var(--theme-fade-duration) ease,
+    opacity var(--page-fade-duration) ease,
+    visibility 0s linear var(--page-fade-duration);
+}
+
+.project-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.project-overlay .project-detail-layout {
+  padding-top: calc(var(--spacing-lg) + 3rem);
+}
+
+body.project-overlay-open {
+  overflow: hidden;
 }

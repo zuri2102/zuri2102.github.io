@@ -18,6 +18,7 @@
   --color-button-text: var(--color-cream);
   --color-body-bg: var(--color-cream);
   --color-text-main: var(--color-gray);
+  --color-page-text: var(--color-gray);
   --color-text-accent: var(--color-orange);
   
   /* Fonts */
@@ -28,12 +29,19 @@
   --font-size-base: 16px;
 
   /* Home Page Specific Settings */
-  --home-content-offset-y: -6rem;
+  --home-content-offset-y: -7rem;
   --home-name-font-size: 5rem;
-  --home-name-margin-top: 0rem;
+  --home-name-margin-top: -2rem;
   --home-name-margin-bottom: 1rem;
   --resume-btn-font-size: 1.5rem;
   --resume-btn-padding: 1rem 1rem;
+
+  /* Theme Button and Fade Settings */
+  --theme-toggle-size: 3rem;
+  --theme-toggle-right: 1.5rem;
+  --theme-toggle-bottom: 1.5rem;
+  --theme-fade-duration: 0.4s;
+  --page-fade-duration: 0.3s;
 
   /* About Page Specific Settings */
   --about-text-color: var(--color-gray);
@@ -49,4 +57,11 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
+}
+
+:root[data-theme="dark"] {
+  --color-body-bg: #101017;
+  --color-text-main: var(--color-cream);
+  --color-page-text: var(--color-cream);
+  --about-text-color: var(--color-cream);
 }

@@ -81,6 +81,48 @@
   margin-bottom: var(--spacing-lg);
 }
 
+.home-links {
+  margin-top: var(--spacing-md);
+  color: var(--color-orange);
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+.home-links span {
+  margin: 0 var(--spacing-sm);
+}
+
+.theme-toggle {
+  position: fixed;
+  right: var(--theme-toggle-right);
+  bottom: var(--theme-toggle-bottom);
+  width: var(--theme-toggle-size);
+  height: var(--theme-toggle-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  color: var(--color-gray);
+  cursor: pointer;
+  z-index: 2000;
+  transition:
+    color var(--theme-fade-duration) ease,
+    transform var(--press-duration) steps(3, end);
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  color: var(--color-cream);
+}
+
+.theme-toggle svg {
+  width: 55%;
+  height: 55%;
+  fill: currentColor;
+}
+
 
 /* Sprites */
 .sprite {
@@ -209,7 +251,7 @@
 
 .about-text-block {
   background: transparent;
-  color: var(--color-gray);
+  color: var(--color-page-text);
   font-family: var(--font-body);
   line-height: 1.6;
   position: relative;
@@ -218,6 +260,11 @@
 }
 .about-text-block .text-content {
   color: var(--about-text-color);
+}
+
+.about-text-block,
+.about-text-block .text-content {
+  transition: color var(--theme-fade-duration) ease;
 }
 .about-text-block h3 {
   color: var(--about-heading-color);

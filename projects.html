@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    try {
+      const linkedTheme = new URLSearchParams(location.search).get('theme');
+      const savedTheme = linkedTheme || localStorage.getItem('theme');
+      if (linkedTheme) localStorage.setItem('theme', linkedTheme);
+      if (savedTheme === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch {}
+  </script>
   <title>Zuri Ye - Projects</title>
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -25,6 +35,14 @@
     </div>
   </main>
 
+  <section class="project-overlay" id="project-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="project-detail-layout">
+      <button type="button" class="btn-back retro-press" id="project-overlay-back">&lt; back</button>
+      <h1 class="project-title" id="project-overlay-title"></h1>
+      <div class="project-content-box" id="project-overlay-content"></div>
+    </div>
+  </section>
+
   <script src="js/config.js"></script>
   <script src="js/interactions.js"></script>
   <script src="data/projects.js"></script>
@@ -32,6 +50,56 @@
     document.addEventListener('DOMContentLoaded', () => {
       const grid = document.getElementById('projects-grid');
       const cLayout = siteConfig.cartridgeLayout || { title: {}, summary: {}, tags: {} };
+      const overlay = document.getElementById('project-overlay');
+      const overlayBack = document.getElementById('project-overlay-back');
+      const overlayTitle = document.getElementById('project-overlay-title');
+      const overlayContent = document.getElementById('project-overlay-content');
+      const projectsPageTitle = document.title;
+      let activeCartridge = null;
+
+      const openProjectOverlay = (project, href, addHistory = true) => {
+        activeCartridge = document.activeElement;
+        overlayTitle.textContent = project.title;
+        overlayContent.innerHTML = project.content;
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('project-overlay-open');
+        document.title = `Zuri Ye - ${project.title}`;
+
+        if (addHistory) {
+          const destination = new URL(href, window.location.href);
+          const currentTheme = document.documentElement.dataset.theme === 'dark'
+            ? 'dark'
+            : 'light';
+          destination.searchParams.set('theme', currentTheme);
+          history.pushState(
+            { projectOverlay: true, projectId: project.id },
+            '',
+            destination.href
+          );
+        }
+
+        overlay.scrollTop = 0;
+        overlayBack.focus();
+      };
+
+      const closeProjectOverlay = () => {
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('project-overlay-open');
+        document.title = projectsPageTitle;
+        activeCartridge?.focus();
+      };
+
+      const returnToProjects = () => {
+        const destination = new URL('projects.html', window.location.href);
+        const currentTheme = document.documentElement.dataset.theme === 'dark'
+          ? 'dark'
+          : 'light';
+        destination.searchParams.set('theme', currentTheme);
+        history.replaceState(null, '', destination.href);
+        closeProjectOverlay();
+      };
       
       siteProjects.forEach(project => {
         const cartridge = document.createElement('a');
@@ -49,8 +117,33 @@
             <div class="cartridge-tags" style="bottom: ${cLayout.tags.bottom}; left: ${cLayout.tags.left}; width: ${cLayout.tags.width};">${tagsHtml}</div>
           </div>
         `;
+
+        cartridge.addEventListener('click', event => {
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
+          event.preventDefault();
+          event.stopPropagation();
+          openProjectOverlay(project, cartridge.href);
+        });
         
         grid.appendChild(cartridge);
+      });
+
+      overlayBack.addEventListener('click', returnToProjects);
+
+      window.addEventListener('popstate', event => {
+        if (event.state?.projectOverlay) {
+          const project = siteProjects.find(item => item.id === event.state.projectId);
+          if (project) openProjectOverlay(project, window.location.href, false);
+        } else {
+          closeProjectOverlay();
+        }
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && overlay.classList.contains('is-open')) {
+          returnToProjects();
+        }
       });
 
       // Keep every overlay element at the same scale as its cartridge image.

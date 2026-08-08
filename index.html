@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    try {
+      const linkedTheme = new URLSearchParams(location.search).get('theme');
+      const savedTheme = linkedTheme || localStorage.getItem('theme');
+      if (linkedTheme) localStorage.setItem('theme', linkedTheme);
+      if (savedTheme === 'dark') {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    } catch {}
+  </script>
   <meta property="og:image" content="https://zuri2102.github.io/personal_website/ref/pokemon_example.png">
   <meta property="og:image:width" content="2048">
   <meta property="og:image:height" content="1536">
@@ -43,6 +53,14 @@
     <h1 class="home-name">ZURI YE</h1>
 
     <a href="assets/resume.pdf" class="btn-primary retro-press" target="_blank" rel="noopener">RESUME</a>
+
+    <div class="home-links">
+      <a href="https://github.com/zuri2102" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span>|</span>
+      <a href="https://www.linkedin.com/in/zuriye/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span>|</span>
+      <a href="mailto:zuriye45@gmail.com">Email</a>
+    </div>
 
   </main>
 
