@@ -4,6 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
+    window.SITE_REVISION = new URLSearchParams(window.location.search).get('v') || Date.now().toString(36);
+    window.versionedAssetUrl = path => {
+      const assetUrl = new URL(path, window.location.href);
+      assetUrl.searchParams.set('v', window.SITE_REVISION);
+      return assetUrl.href;
+    };
+    window.loadVersionedStyles = paths => paths.forEach(path => {
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = window.versionedAssetUrl(path);
+      document.head.appendChild(stylesheet);
+    });
+    window.loadVersionedScripts = paths => paths.forEach(path => {
+      document.write(`<script src="${window.versionedAssetUrl(path)}"><\/script>`);
+    });
+    fetch(`version.json?t=${Date.now()}`, { cache: 'no-store' })
+      .then(response => response.ok ? response.json() : null)
+      .then(build => {
+        if (!build?.revision) return;
+
+        const currentUrl = new URL(window.location.href);
+        if (currentUrl.searchParams.get('v') !== build.revision) {
+          currentUrl.searchParams.set('v', build.revision);
+          window.location.replace(currentUrl.href);
+        }
+      })
+      .catch(() => {});
+  </script>
+  <script>
     try {
       const linkedTheme = new URLSearchParams(location.search).get('theme');
       const savedTheme = linkedTheme || localStorage.getItem('theme');
@@ -14,10 +43,14 @@
     } catch {}
   </script>
   <title>Zuri Ye - Projects</title>
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
+  <script>
+    window.loadVersionedStyles([
+      'css/variables.css',
+      'css/base.css',
+      'css/components.css',
+      'css/pages.css'
+    ]);
+  </script>
 </head>
 <body>
 
@@ -43,9 +76,9 @@
     </div>
   </section>
 
-  <script src="js/config.js"></script>
-  <script src="js/interactions.js"></script>
-  <script src="data/projects.js"></script>
+  <script>
+    window.loadVersionedScripts(['js/config.js', 'js/interactions.js', 'data/projects.js']);
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const grid = document.getElementById('projects-grid');
@@ -61,6 +94,7 @@
         activeCartridge = document.activeElement;
         overlayTitle.textContent = project.title;
         overlayContent.innerHTML = project.content;
+        versionLocalAssets(overlayContent);
         overlay.classList.add('is-open');
         overlay.setAttribute('aria-hidden', 'false');
         document.body.classList.add('project-overlay-open');
@@ -109,7 +143,7 @@
         let tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
         cartridge.innerHTML = `
-          <img src="assets/sprites/cartridge.png" class="cartridge-bg" alt="Cartridge">
+          <img src="${window.versionedAssetUrl('assets/sprites/cartridge.png')}" class="cartridge-bg" alt="Cartridge">
           <div class="cartridge-content">
             <h2 class="cartridge-title" style="top: ${cLayout.title.top}; left: ${cLayout.title.left}; transform: ${cLayout.title.transform || 'none'}; width: ${cLayout.title.width};">${project.title}</h2>
             ${project.subheading ? `<div class="cartridge-subheading" style="top: ${cLayout.subheading.top}; left: ${cLayout.subheading.left}; transform: ${cLayout.subheading.transform || 'none'}; width: ${cLayout.subheading.width};">${project.subheading}</div>` : ''}

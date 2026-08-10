@@ -65,11 +65,14 @@ const siteProjects = [
     "  <li>Fast-charge current set via a single PROG resistor, sized around 0.5C</li>",
     "</ul>",
 
+        "<br><img src='assets/projects/mp3/charging.png' alt='charging' style='display:block;margin:0 auto;'>",
+
     "<br>",
     "<h2 style=\"color:#ff4c00;\">3.3V RAIL</h2>",
     "<ul>",
     "  <li>AP2112K-3.3 LDO, chosen over the AMS1117 for its lower dropout &mdash; keeps the board running further into a discharged battery instead of browning out early</li>",
     "</ul>",
+    "<br><img src='assets/projects/mp3/rail.png' alt='rail' style='display:block;margin:0 auto;'>",
 
     "<br>",
     "<h2 style=\"color:#ff4c00;\">SOFTWARE POWER SWITCH</h2>",
@@ -77,6 +80,8 @@ const siteProjects = [
     "  <li>P-MOSFET between battery and everything downstream, held on by either a physical button or an ESP32 GPIO (through a diode so they don't fight each other)</li>",
     "  <li>Lets firmware hold the board on after boot and cut power cleanly on shutdown</li>",
     "</ul>",
+    "<br><img src='assets/projects/mp3/reset.png' alt='reset' style='display:block;margin:0 auto;'>",
+
 
     "<br>",
     "<h2 style=\"color:#ff4c00;\">EXTRAS</h2>",
@@ -96,6 +101,9 @@ const siteProjects = [
     "  <li>Switched to a plain ESP32-WROOM-32E for native Classic BT + BLE + WiFi</li>",
     "  <li>Trade-off: no native USB anymore, so a CH340C handles flashing/serial</li>",
     "</ul>",
+
+        "<br><img src='assets/projects/mp3/uart.png' alt='uart' style='display:block;margin:0 auto;'>",
+
 
     "<br>",
     "<h2 style=\"color:#ff4c00;\">FLASHING</h2>",
