@@ -1,14 +1,13 @@
 // js/interactions.js
 
+// Clean up links created by the retired cache-version redirect without reloading.
+const currentUrl = new URL(window.location.href);
+if (currentUrl.searchParams.has('v')) {
+  currentUrl.searchParams.delete('v');
+  window.history.replaceState(window.history.state, '', currentUrl.href);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-versioned-src]').forEach(asset => {
-    asset.src = window.versionedAssetUrl(asset.dataset.versionedSrc);
-  });
-
-  document.querySelectorAll('[data-versioned-href]').forEach(asset => {
-    asset.href = window.versionedAssetUrl(asset.dataset.versionedHref);
-  });
-
   // Persistent light/dark theme toggle
   const themeToggle = document.createElement('button');
   themeToggle.type = 'button';
@@ -133,20 +132,6 @@ window.addEventListener('storage', event => {
   const themeToggle = document.querySelector('.theme-toggle');
   themeToggle?.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
 });
-
-// Give locally hosted images injected from data files the current deploy URL.
-// External images are intentionally left untouched.
-function versionLocalAssets(container) {
-  if (!window.SITE_REVISION) return;
-
-  container.querySelectorAll('[src]').forEach(asset => {
-    const assetUrl = new URL(asset.getAttribute('src'), window.location.href);
-    if (assetUrl.origin !== window.location.origin) return;
-
-    assetUrl.searchParams.set('v', window.SITE_REVISION);
-    asset.src = assetUrl.href;
-  });
-}
 
 // Helper function to render line numbers for code blocks
 function renderLineNumbers() {

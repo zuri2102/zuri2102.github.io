@@ -4,32 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
-    window.SITE_REVISION = new URLSearchParams(window.location.search).get('v') || Date.now().toString(36);
-    window.versionedAssetUrl = path => {
-      const assetUrl = new URL(path, window.location.href);
-      assetUrl.searchParams.set('v', window.SITE_REVISION);
-      return assetUrl.href;
-    };
-    window.loadVersionedStyles = paths => paths.forEach(path => {
-      document.write(`<link rel="stylesheet" href="${window.versionedAssetUrl(path)}">`);
-    });
-    window.loadVersionedScripts = paths => paths.forEach(path => {
-      document.write(`<script src="${window.versionedAssetUrl(path)}"><\/script>`);
-    });
-    fetch(`version.json?t=${Date.now()}`, { cache: 'no-store' })
-      .then(response => response.ok ? response.json() : null)
-      .then(build => {
-        if (!build?.revision) return;
-
-        const currentUrl = new URL(window.location.href);
-        if (currentUrl.searchParams.get('v') !== build.revision) {
-          currentUrl.searchParams.set('v', build.revision);
-          window.location.replace(currentUrl.href);
-        }
-      })
-      .catch(() => {});
-  </script>
-  <script>
     try {
       const linkedTheme = new URLSearchParams(location.search).get('theme');
       const savedTheme = linkedTheme || localStorage.getItem('theme');
@@ -40,14 +14,10 @@
     } catch {}
   </script>
   <title>Zuri Ye - About</title>
-  <script>
-    window.loadVersionedStyles([
-      'css/variables.css',
-      'css/base.css',
-      'css/components.css',
-      'css/pages.css'
-    ]);
-  </script>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
 
@@ -65,9 +35,9 @@
     </div>
   </main>
 
-  <script>
-    window.loadVersionedScripts(['js/config.js', 'js/interactions.js', 'data/about.js']);
-  </script>
+  <script src="js/config.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="data/about.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('about-container');
