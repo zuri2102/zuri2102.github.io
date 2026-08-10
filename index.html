@@ -11,10 +11,7 @@
       return assetUrl.href;
     };
     window.loadVersionedStyles = paths => paths.forEach(path => {
-      const stylesheet = document.createElement('link');
-      stylesheet.rel = 'stylesheet';
-      stylesheet.href = window.versionedAssetUrl(path);
-      document.head.appendChild(stylesheet);
+      document.write(`<link rel="stylesheet" href="${window.versionedAssetUrl(path)}">`);
     });
     window.loadVersionedScripts = paths => paths.forEach(path => {
       document.write(`<script src="${window.versionedAssetUrl(path)}"><\/script>`);
@@ -44,10 +41,13 @@
     } catch {}
   </script>
   <meta property="og:image" content="https://zuri2102.github.io/personal_website/ref/pokemon_example.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="2048">
   <meta property="og:image:height" content="1536">
+  <meta property="og:image:alt" content="Zuri Ye portfolio homepage with animated Pokémon sprites">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://zuri2102.github.io/personal_website/ref/pokemon_example.png">
+  <meta name="twitter:image:alt" content="Zuri Ye portfolio homepage with animated Pokémon sprites">
   <title>Zuri Ye - Home</title>
 
   <script>
@@ -71,7 +71,7 @@
 
   <main class="home-layout">
     
-    <div class="splash-container" id="splash-container">
+    <div class="splash-container" id="splash-container" style="visibility: hidden;">
       <img data-versioned-src="assets/images/404splash.png" alt="404 Splash" class="splash-img">
       <!-- Pokémon Sprites -->
       <a href="https://pokemondb.net/pokedex/purrloin" class="sprite sprite-bw" id="sprite-purrloin" target="_blank">
@@ -115,6 +115,7 @@
       applySpriteConfig('sprite-purrloin', 'purrloin');
       applySpriteConfig('sprite-meowth', 'meowth');
       applySpriteConfig('sprite-skitty', 'skitty');
+      document.getElementById('splash-container').style.removeProperty('visibility');
     });
   </script>
 </body>

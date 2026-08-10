@@ -11,10 +11,7 @@
       return assetUrl.href;
     };
     window.loadVersionedStyles = paths => paths.forEach(path => {
-      const stylesheet = document.createElement('link');
-      stylesheet.rel = 'stylesheet';
-      stylesheet.href = window.versionedAssetUrl(path);
-      document.head.appendChild(stylesheet);
+      document.write(`<link rel="stylesheet" href="${window.versionedAssetUrl(path)}">`);
     });
     window.loadVersionedScripts = paths => paths.forEach(path => {
       document.write(`<script src="${window.versionedAssetUrl(path)}"><\/script>`);
