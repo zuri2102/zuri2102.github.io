@@ -89,7 +89,7 @@ const siteProjects = [
     "  <li>Charge-status LED also feeds a firmware-readable GPIO off the same node</li>",
     "  <li>Test points on the regulator's in/out for easier debugging later</li>",
     "</ul>",
-    "<p><em>Thoughts:</em> I considered reusing the original Huawei battery, but its unknown health and odd connector pushed me toward a fresh JST-PH LiPo instead.</p>",
+    "<br><p><em>Thoughts:</em> I considered reusing the original Huawei battery, but its unknown health and odd connector pushed me toward a fresh JST-PH LiPo instead.</p>",
 
     "<br>",
     "<h1 style=\"color:#c3ded6;text-decoration:underline;\">2. MCU</h1>",
@@ -118,7 +118,8 @@ const siteProjects = [
     "  <li>Avoided the strapping pins (0/2/4/5/12/15)</li>",
     "  <li>Moved all 23 buttons onto I2C expanders, which freed up enough room for everything else to get its own dedicated pin, with one spare left</li>",
     "</ul>",
-    "<p><em>Thoughts:</em> the S3-era plan included a separate Bluetooth audio module, since the S3 couldn't do A2DP alone. Not needed anymore now that the MCU handles Classic BT natively &mdash; planning to just use the ESP32's own radio.</p>",
+    "<br><p><em>Thoughts:</em> the S3-era plan included a separate Bluetooth audio module, since the S3 couldn't do A2DP alone. Not needed anymore now that the MCU handles Classic BT natively &mdash; planning to just use the ESP32's own radio.</p>",
+        "<br><img src='assets/projects/mp3/esp32.png' alt='esp32' style='display:block;margin:0 auto;'>",
 
     "<br>",
     "<h1 style=\"color:#c3ded6;text-decoration:underline;\">3. STORAGE</h1>",
@@ -127,6 +128,8 @@ const siteProjects = [
     "  <li>10k pull-ups on CMD and all four DAT lines per the SD Association spec, CLK excluded since it's always actively driven</li>",
     "  <li>The unused DAT1/DAT2 lines get a pull-up each and nothing else</li>",
     "</ul>",
+
+            "<br><img src='assets/projects/mp3/sd.png' alt='sd' style='display:block;margin:0 auto;'>",
 
     "<br>",
     "<h1 style=\"color:#c3ded6;text-decoration:underline;\">4. TFT SCREEN &mdash; IN PROGRESS</h1>",
