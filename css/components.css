@@ -230,12 +230,17 @@
 }
 
 .tag {
-  background-color: var(--color-cream);
+  background-color: transparent;
   color: var(--color-gray);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
   font-family: var(--font-mono);
+  transition: color var(--theme-fade-duration) ease;
+}
+
+:root[data-theme="dark"] .tag {
+  color: var(--color-cream);
 }
 
 /* About Blocks */

@@ -66,6 +66,12 @@
   margin-bottom: var(--spacing-md);
 }
 
+.project-content-box ul,
+.project-content-box ol {
+  padding-left: var(--spacing-lg);
+  margin: var(--spacing-sm) 0 var(--spacing-md);
+}
+
 .project-content-box img {
   border-radius: 4px;
   margin: var(--spacing-md) 0;
