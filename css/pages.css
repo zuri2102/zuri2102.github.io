@@ -66,6 +66,29 @@
   margin-bottom: var(--spacing-md);
 }
 
+.project-writeup-header {
+  font-family: var(--font-display);
+  font-weight: normal;
+  line-height: 1.15;
+  margin: var(--spacing-lg) 0 var(--spacing-sm);
+}
+
+.project-writeup-header--large {
+  color: var(--color-green);
+  font-size: 2.25rem;
+  text-decoration: underline;
+}
+
+.project-writeup-header--medium {
+  color: var(--color-orange);
+  font-size: 2rem;
+}
+
+.project-writeup-header--small {
+  color: var(--color-orange);
+  font-size: 1.5rem;
+}
+
 .project-content-box ul,
 .project-content-box ol {
   padding-left: var(--spacing-lg);
@@ -73,8 +96,9 @@
 }
 
 .project-content-box img {
+  display: block;
   border-radius: 4px;
-  margin: var(--spacing-md) 0;
+  margin: var(--spacing-md) auto;
 }
 
 .project-overlay {
