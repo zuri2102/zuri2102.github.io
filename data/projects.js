@@ -170,11 +170,12 @@ const siteProjects = [
     content: [
       "<p>Investigating optimizing Gaussian Splatting architectures for UAV application with a focus on mitigating errors caused by large inter-frame displacement</p>",
       "<p>Working with CMU robotics lab and postdoc</p>",
-      "<p>Currently recreating the original implementation from scratch by hand</p>",
+      "<p>Currently recreating the original implementation from scratch by hand and experimenting with IMU predictive steps and different machine learning approaches</p>",
+      "<p>Python, PyTorch, CUDA, machine learning, SLAM</p>",
       "<p>More details coming soon..</p>",
       "<a href='https://github.com/zuri2102/vings_zy.git' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- GitHub</a>",
       projectWriteup.header('medium', 'VINGS-Mono Frontend Overview'),
-      "<p>An in depth breakdown of the underlying workings of the frontend, past what is described in the paper. Based on the <a href='https://github.com/Fudan-MAGIC-Lab/VINGS-Mono.git' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>original GitHub repository</a></p>",
+      "<p>This is my in depth breakdown of the underlying workings of the frontend, past what is described in the paper. Based on the <a href='https://github.com/Fudan-MAGIC-Lab/VINGS-Mono.git' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>original GitHub repository</a></p>",
       "<img src='assets/projects/research/frontendflowchart.png' alt='frontend'>",
       "<br>",
       "<i style=\"color: #ff4c00;\">November 2025 - Present</i>",
@@ -200,7 +201,27 @@ const siteProjects = [
       "<img src='assets/projects/tartan-auv/servopower.png' alt='TartanAUV PCB'>"
     ].join("\n")
   },
+  {
+    "id": "spot-on",
+    "title": "Spot On",
+    "subheading": "Personal Project",
+    "summary": "MP3 scraper + Spotify sync + custom playlist manager app<br> <a href=\"https://pokemondb.net/pokedex/jigglypuff\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/jigglypuff.gif\" alt=\"Jigglypuff\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["Systems Design", "IN PROGRESS"],
+    content: [
+      "<p>candybar iPod partner app and standalone <br>Details coming soon..</p>",
+      "<a href='https://github.com/zuri2102/spot_on.git' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- GitHub</a>",
 
+      "<img src='assets/projects/spot-on/library.png' alt='lib'>",
+      "<img src='assets/projects/spot-on/sync.png' alt='sync'>",
+      "<img src='assets/projects/spot-on/local.png' alt='local'>",
+      "<img src='assets/projects/spot-on/settings.png' alt='settings'>",
+
+      "<br>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")
+  },
 
 {
     "id": "honey-haven",
@@ -302,4 +323,5 @@ const siteProjects = [
       "</ul>"
     ].join("\n")
   }
+
 ];
