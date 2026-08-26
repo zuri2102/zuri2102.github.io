@@ -208,14 +208,22 @@ const siteProjects = [
     "summary": "MP3 scraper + Spotify sync + custom playlist manager app<br> <a href=\"https://pokemondb.net/pokedex/jigglypuff\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/jigglypuff.gif\" alt=\"Jigglypuff\" style=\"filter: grayscale(100%);\"></a>",
     "tags": ["Systems Design", "IN PROGRESS"],
     content: [
-      "<p>candybar iPod partner app and standalone <br>Details coming soon..</p>",
+      "<p>Candybar iPod partner app and standalone",
+      "<br>",
+      projectWriteup.bulletList([
+        'Given a link to a public playlist, scrapes Spotify webpage and downloads mp3s from YouTube corresponding to the entered songs',
+        'Transparent downloading process, with user-flexibility in selecting which YouTube videos the mp3s come from',
+        'Can add individual songs in the same process',
+        'Custom playlist features, UI color choice, etc.',
+        'Supports offline capability'
+      ]),
+      "Details coming soon..</p>",
+      
       "<a href='https://github.com/zuri2102/spot_on.git' target='_blank' rel='noopener noreferrer' style='color: #ff4c00;'>- GitHub</a>",
-
-      "<img src='assets/projects/spot-on/library.png' alt='lib'>",
-      "<img src='assets/projects/spot-on/sync.png' alt='sync'>",
-      "<img src='assets/projects/spot-on/local.png' alt='local'>",
-      "<img src='assets/projects/spot-on/settings.png' alt='settings'>",
-
+      projectWriteup.image('assets/projects/spot-on/library.png', 'Library/Home page'),
+      projectWriteup.image('assets/projects/spot-on/sync.png', 'Sync interface'),
+      projectWriteup.image('assets/projects/spot-on/local.png', 'Local library of saved mp3s'),
+      projectWriteup.image('assets/projects/spot-on/settings.png', 'Settings'),
       "<br>",
       "<ul>",
       "  <li>TBD</li>",
