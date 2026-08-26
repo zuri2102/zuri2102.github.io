@@ -208,7 +208,7 @@ const siteProjects = [
     "summary": "MP3 scraper + Spotify sync + custom playlist manager app<br> <a href=\"https://pokemondb.net/pokedex/jigglypuff\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/jigglypuff.gif\" alt=\"Jigglypuff\" style=\"filter: grayscale(100%);\"></a>",
     "tags": ["Systems Design", "IN PROGRESS"],
     content: [
-      "<p>Candybar iPod partner app and standalone",
+      "<p>Candybar iPod partner app and standalone ",
       "<br>",
       projectWriteup.bulletList([
         'Given a link to a public playlist, scrapes Spotify webpage and downloads mp3s from YouTube corresponding to the entered songs',
