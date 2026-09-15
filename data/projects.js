@@ -201,6 +201,23 @@ const siteProjects = [
       "<img src='assets/projects/tartan-auv/servopower.png' alt='TartanAUV PCB'>"
     ].join("\n")
   },
+
+  {
+    "id": "gameboy",
+    "title": "Giant GameBoy",
+    "subheading": "Project Manager & Hardware",
+    "summary": "We are gonna make a giant (functioning) custom gameboy!! <br><a href=\"https://pokemondb.net/pokedex/porygon\"><img src=\"https://img.pokemondb.net/sprites/black-white/anim/normal/porygon.gif\" alt=\"Porygon\" style=\"filter: grayscale(100%);\"></a>",
+    "tags": ["Hardware", "EARLY STAGES"],
+    content: [
+      "<p>Details coming soon..</p>",
+      "<img src='ref/404splash.png' alt='404 Splash Demo'>",
+      "<br>",
+      "<ul>",
+      "  <li>TBD</li>",
+      "</ul>"
+    ].join("\n")
+  },
+
   {
     "id": "spot-on",
     "title": "Spot On",
@@ -331,5 +348,7 @@ const siteProjects = [
       "</ul>"
     ].join("\n")
   }
+
+
 
 ];

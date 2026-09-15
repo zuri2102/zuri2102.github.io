@@ -38,7 +38,7 @@ const siteAbout = [
       "Class of 2029 | Cumulative GPA: 3.91/4.0",
       "",
       "<strong>Relevant Coursework:</strong>",
-      "  - 18213 Computer Systems",
+      "  - 18213 Computer Systems <--currently TAing",
       "  - 15122 Principles of Imperative Computation",
       "  - 21127 Concepts of Mathematics", 
       "  - 21241 Matrices and Linear Transformations",
@@ -63,8 +63,8 @@ const siteAbout = [
       "<strong style='color: #ff4c00;'> # SKILLS</strong>",
       "",
       "<strong>Languages & Tools:</strong>",
-      "  - C, Python, Java, R, MATLAB",
-      "  - OpenCV, ROS2, Linux, Bash, Git, GitHub",
+      "  - C, Python, Java, R, MATLAB, SystemVerilog",
+      "  - OpenCV, ROS2, Linux, Bash, Git, GitHub, Vivado",
       "",
       "<strong>CAD & Fabrication:</strong>",
       "  - Altium Designer, KiCAD, OnShape",
@@ -84,12 +84,12 @@ const siteAbout = [
     "content": [
       "<strong style='color: #ff4c00;'> # INTERESTS</strong>",
       "",
-      "  - robotics",
-      "  - computer vision",
+      "  - devices",
       "  - embedded systems",
       "  - hardware/software interface",
+      "  - computer vision",
       "  - aerospace engineering",
-      "  - devices"
+      "  - robotics"
     ].join("\n")
   },
   {
